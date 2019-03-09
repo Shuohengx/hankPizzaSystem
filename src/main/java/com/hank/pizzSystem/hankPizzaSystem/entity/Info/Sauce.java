@@ -3,6 +3,7 @@ package com.hank.pizzSystem.hankPizzaSystem.entity.Info;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.time.LocalDate;
 
 @Entity
 public class Sauce {
@@ -11,16 +12,16 @@ public class Sauce {
     private Long id;
 
     @Column(nullable = false, unique = false)
-    private Timestamp createdTime;
+    private LocalDate createdTime;
 
     @Column(nullable = false, unique = false)
-    private Timestamp lastUpdateTime;
+    private LocalDate lastUpdateTime;
 
     @Column(nullable = false, unique = true)
     private String SauceName;
 
     @Column(nullable = false, unique = true)
-    private float unitPrice;
+    private int unitPrice;
 
 
 

@@ -1,6 +1,7 @@
 package com.hank.pizzSystem.hankPizzaSystem.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -12,16 +13,23 @@ public class Store {
 
 
     @Column(nullable = false, unique = true)
-    private String storeUnitNumber;
+    private int storeAddressLine;
+
     @Column(nullable = false, unique = true)
-    private int storeStreetNumber;
-    @Column(nullable = false, unique = true)
-    private String storeStreetName;
-    @Column(nullable = false, unique = true)
-    private String storeSuburbName;
-    @Column(nullable = false, unique = true)
+    private String suburb;
+
+
+    @Column(nullable = false, unique = false)
     private int storePostCode;
+
+    @Column(nullable = false, unique = false)
+    private String country;
+
+
     @Column(nullable = false, unique = true)
     private int storeContactNumber;
+
+    @OneToMany
+    private List<Staff> staffList;
 
 }

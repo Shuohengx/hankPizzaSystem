@@ -20,7 +20,7 @@ public class Cheese {
     private String cheeseName;
 
     @Column(nullable = false, unique = false)
-    private float unitPrice;
+    private int unitPrice;
  //   @Column(nullable = false, unique = true)
    // private int Stock;
 

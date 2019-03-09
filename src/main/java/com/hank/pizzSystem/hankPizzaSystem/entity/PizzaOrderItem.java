@@ -10,6 +10,9 @@ public class PizzaOrderItem {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column(nullable = false)
+    private String pizzaId;
+
     @Column(nullable = false, unique = false)
     private Timestamp createdTime;
 
@@ -19,15 +22,15 @@ public class PizzaOrderItem {
 
     @Column(nullable = false)
     private String orderItemName;
-    @Column(nullable = false)
-    private String pizzaId;
+
 
     @Column(nullable = false)
     private int orderItemQuantity;
 
 
-    @Column(nullable = false)
-    private float unitPrice;
+    @Transient
+    private  float subtotal;
+
 
 
 

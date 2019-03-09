@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Collection;
 
 @Entity
@@ -16,12 +17,38 @@ public class Staff implements Serializable {
   private String firstName;
   private String lastName;
   private String email;
+
+  @Column(nullable = false, unique = false)
+  private LocalDate addressLine;
+
+  @Column(nullable = false, unique = false)
+  private String postcode;
+
+  @Column(nullable = false, unique = false)
+  private String state;
+
+  @Column(nullable = false, unique = false)
+  private String country;
+
+
+
+  @Column(nullable = false, unique = false)
+  private String telephoneNumber;
+
   private String password;
   private boolean enabled;
   private boolean tokenExpired;
 
- // private LocalDate createTime;
- // private LocalDate updateTime;
+
+
+
+  @Column(nullable = false, unique = false)
+  private LocalDate createdTime;
+
+  @Column(nullable = false, unique = false)
+  private LocalDate lastUpdateTime;
+
+
 
 //JsonIgnore
   @JsonIgnore

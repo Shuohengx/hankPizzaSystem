@@ -16,13 +16,13 @@ public class Crust {
     @Column(nullable = false, unique = false)
     private Timestamp lastUpdateTime;
 
-    @Column(nullable = false, unique = true)
-    private String crustName;
+    @Column(nullable = false, unique = false)
+    private String name;
+
+//    @Column(nullable = false, unique = false)
+//    private String size;
 
     @Column(nullable = false, unique = false)
-    private String size;
-
-    @Column(nullable = false, unique = false)
-    private float unitPrice;
+    private int unitPrice;//cent
 
 }

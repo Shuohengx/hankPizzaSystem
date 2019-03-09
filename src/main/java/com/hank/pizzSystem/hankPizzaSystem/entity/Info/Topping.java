@@ -18,9 +18,13 @@ public class Topping {
     private Timestamp lastUpdateTime;
 
     @Column(nullable = false, unique = true)
-    private String cheeseName;
+    private String name;
 
-    @Column(nullable = false, unique = true)
-    private float unitPrice;
+    @Column(nullable = false, unique = false)
+    private int unitPrice;//cent
 
+
+    public String getName() {
+        return name;
+    }
 }

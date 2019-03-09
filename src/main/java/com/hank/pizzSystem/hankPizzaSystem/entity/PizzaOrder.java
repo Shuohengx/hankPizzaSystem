@@ -29,26 +29,41 @@ public class PizzaOrder {
 //    private float Voucher;
 
     @Column(nullable = false, unique = true)
-    private String unitNumber;
+    @Enumerated(EnumType.STRING)
+    private OrderStatus orderStatus;
+
     @Column(nullable = false, unique = true)
-    private int streetNumber;
-    @Column(nullable = false, unique = true)
-    private String streetName;
-    @Column(nullable = false, unique = true)
-    private String suburbName;
+    private String addressLine;
+
     @Column(nullable = false, unique = true)
     private int postCode;
     @Column(nullable = false, unique = true)
-    private String mobileNumber;
+    private String suburbName;
+    @Column(nullable = false, unique = true)
+    private String state;
+    @Column(nullable = false, unique = true)
+    private String country;
+
 
     @Column(nullable = false, unique = true)
-    private int storeId;
+    private String mobileNumber;
+
+//    @Column(nullable = false, unique = true)
+//    private int storeId;
+
+    @OneToOne
+    private Store store;
+
+    @OneToOne
+    private Payment payment;
 
 
     @OneToMany
     private List<PizzaOrderItem> orderItemList;
 
 
+    @Transient
+    private float total;
 
     public PizzaOrder(){
 

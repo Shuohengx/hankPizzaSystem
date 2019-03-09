@@ -2,15 +2,19 @@ package com.hank.pizzSystem.hankPizzaSystem.model;
 
 import com.hank.pizzSystem.hankPizzaSystem.entity.Info.Pizza;
 
+import java.util.List;
+
 public class PizzaDto {
-    private int id;
+    private long id;
     private String name;
- //   private int list<PizzaSize>;
+    private List<String> sizes;
     private String description;
 
 
     public PizzaDto(Pizza pizza){
-   //     this.id = pizza.id;
+        this.id = pizza.getId();
+        this.name = pizza.getPizzaName();
+    //    this.sizes = pizza.
 
     }
 
